@@ -1,6 +1,6 @@
 # 🚀 Job Board Application
 
-A modern Job Board web application built using **Next.js** that allows users to search, filter, and explore job opportunities with a clean and responsive UI.
+A modern **Job Board web application** built using **Next.js** that allows users to search, filter, and explore job opportunities with a clean and responsive UI.
 
 ---
 
@@ -35,38 +35,38 @@ https://github.com/SandhyaMutha/job-board
 - Filter by job type (Full Time, Remote, Internship)
 
 ### 💼 Job Listings
-- Featured jobs section
-- Latest jobs section
-- Interactive job cards
+- Featured Jobs section
+- Latest Jobs section
+- Interactive job cards with navigation
 
 ### 📄 Job Details Page
 - Full job description
 - Company details
-- Salary and skills
+- Salary information
+- Skills required
 - Apply button navigation
 
 ### 📝 Job Application Form
-- Name, email, phone input
+- Name, email, phone inputs
 - Resume link input
-- Cover letter field
-- Form validation (basic UI submission)
+- Cover letter section
+- Basic form validation (UI level submission)
 
 ### 🧭 Navigation System
 - Smooth scrolling navigation
-- Jobs, Companies, About, Contact sections
+- Sections: Jobs, Companies, About, Contact
 - Login page routing
 
 ### 🔐 Login Page (UI Only)
 - Email & password form
-- Placeholder authentication (no backend)
+- Placeholder authentication (no backend logic)
 
 ---
 
 ## 🚀 CI/CD Pipeline
 
-- GitHub Actions used for CI automation
-- Automatic deployment on push to main branch
-- Vercel handles production deployment
+- GitHub Actions for continuous integration
+- Auto deployment via Vercel on every push to `main` branch
 
 ---
 
