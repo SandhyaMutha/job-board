@@ -69,7 +69,6 @@ https://github.com/SandhyaMutha/job-board
 - Auto deployment via Vercel on every push to `main` branch
 
 ---
-
 ## 📦 Installation
 
 ```bash
