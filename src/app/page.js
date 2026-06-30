@@ -32,7 +32,7 @@ export default function Home() {
 
       <main className="bg-gray-100 min-h-screen">
 
-        {/* Hero Section */}
+        {/* HERO SECTION */}
         <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
           <div className="max-w-6xl mx-auto px-6 text-center">
 
@@ -44,7 +44,6 @@ export default function Home() {
               Discover thousands of job opportunities from the world's top companies.
             </p>
 
-
             <div className="flex justify-center gap-12 mt-10">
 
               <div>
@@ -52,12 +51,10 @@ export default function Home() {
                 <p>Jobs</p>
               </div>
 
-
               <div>
                 <h2 className="text-3xl font-bold">500+</h2>
                 <p>Companies</p>
               </div>
-
 
               <div>
                 <h2 className="text-3xl font-bold">20K+</h2>
@@ -65,7 +62,6 @@ export default function Home() {
               </div>
 
             </div>
-
 
             <button
               onClick={() =>
@@ -78,17 +74,13 @@ export default function Home() {
               Explore Jobs
             </button>
 
-
           </div>
         </section>
 
-
-
-        {/* Search & Filters */}
+        {/* SEARCH & FILTERS */}
         <section className="max-w-6xl mx-auto px-6 my-10">
 
           <div className="grid md:grid-cols-3 gap-4">
-
 
             <input
               type="text"
@@ -98,141 +90,104 @@ export default function Home() {
               className="border p-3 rounded-lg bg-white shadow"
             />
 
-
             <select
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className="border p-3 rounded-lg bg-white shadow"
             >
-
               <option>All</option>
               <option>Hyderabad</option>
               <option>Bangalore</option>
               <option>Chennai</option>
               <option>Pune</option>
               <option>Mumbai</option>
-
             </select>
-
 
             <select
               value={jobType}
               onChange={(e) => setJobType(e.target.value)}
               className="border p-3 rounded-lg bg-white shadow"
             >
-
               <option>All</option>
               <option>Full Time</option>
               <option>Remote</option>
               <option>Internship</option>
-
             </select>
-
 
           </div>
 
         </section>
 
-
-
-
-        {/* Featured Jobs */}
-
-        <section className="max-w-6xl mx-auto px-6 mb-12">
+        {/* FEATURED JOBS (COMPANIES SECTION) */}
+        <section id="companies" className="max-w-6xl mx-auto px-6 mb-12">
 
           <h2 className="text-3xl font-bold mb-6">
             ⭐ Featured Jobs
           </h2>
 
-
           <div className="grid md:grid-cols-3 gap-6">
 
             {jobs.slice(0, 3).map((job) => (
-
               <Link
                 key={job.id}
                 href={`/jobs/${job.id}`}
                 className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600 hover:shadow-xl transition block"
               >
-
-                <h3 className="text-xl font-bold">
-                  {job.title}
-                </h3>
-
-
-                <p className="text-gray-600 mt-2">
-                  {job.company}
-                </p>
-
-
-                <p className="mt-2">
-                  📍 {job.location}
-                </p>
-
-
+                <h3 className="text-xl font-bold">{job.title}</h3>
+                <p className="text-gray-600 mt-2">{job.company}</p>
+                <p className="mt-2">📍 {job.location}</p>
                 <p className="text-green-600 font-semibold mt-2">
                   💰 {job.salary}
                 </p>
-
-
               </Link>
-
             ))}
 
           </div>
 
         </section>
 
+        {/* ABOUT SECTION */}
+        <section id="about" className="max-w-6xl mx-auto px-6 my-16 text-center">
+          <h2 className="text-3xl font-bold mb-4">About Us</h2>
+          <p className="text-gray-600">
+            JobBoard helps candidates find dream jobs and connect with top companies easily using a simple and modern interface.
+          </p>
+        </section>
 
-
-
-        {/* Latest Jobs */}
-
-        <section
-          id="latest-jobs"
-          className="max-w-6xl mx-auto px-6 pb-12"
-        >
+        {/* LATEST JOBS */}
+        <section id="latest-jobs" className="max-w-6xl mx-auto px-6 pb-12">
 
           <h2 className="text-3xl font-bold mb-8">
             Latest Jobs
           </h2>
 
-
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-
             {filteredJobs.length > 0 ? (
-
               filteredJobs.map((job) => (
-
-                <JobCard
-                  key={job.id}
-                  job={job}
-                />
-
+                <JobCard key={job.id} job={job} />
               ))
-
             ) : (
-
               <p className="text-center text-red-500 col-span-3">
                 No Jobs Found
               </p>
-
             )}
-
 
           </div>
 
-
         </section>
 
+        {/* CONTACT SECTION */}
+        <section id="contact" className="max-w-6xl mx-auto px-6 my-16 text-center">
+          <h2 className="text-3xl font-bold mb-4">Contact</h2>
+          <p className="text-gray-600">
+            Email: support@jobboard.com | Phone: +91 98765 43210
+          </p>
+        </section>
 
       </main>
 
-
       <Footer />
-
     </>
   );
 }
