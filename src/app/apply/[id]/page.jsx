@@ -17,15 +17,13 @@ export default function ApplyPage({ params }) {
     coverLetter: "",
   });
 
-  // If job is not found
   if (!job) {
     return (
-      <h1 className="text-center text-3xl mt-10">
+      <h1 className="text-center text-3xl text-gray-900 mt-10">
         Job Not Found
       </h1>
     );
   }
-
 
   const handleChange = (e) => {
     setForm({
@@ -33,7 +31,6 @@ export default function ApplyPage({ params }) {
       [e.target.name]: e.target.value,
     });
   };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,13 +47,9 @@ export default function ApplyPage({ params }) {
       appliedDate: new Date().toLocaleDateString(),
     };
 
-
-    // Get existing applications
     const existingApplications =
       JSON.parse(localStorage.getItem("applications")) || [];
 
-
-    // Save new application
     localStorage.setItem(
       "applications",
       JSON.stringify([
@@ -65,9 +58,7 @@ export default function ApplyPage({ params }) {
       ])
     );
 
-
     alert("Application Submitted Successfully!");
-
 
     setForm({
       name: "",
@@ -78,26 +69,23 @@ export default function ApplyPage({ params }) {
     });
   };
 
-
   return (
     <main className="min-h-screen bg-gray-100 py-10">
 
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
 
-        <h1 className="text-3xl font-bold mb-2">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Apply for {job.title}
         </h1>
 
-        <p className="text-gray-600 mb-8">
+        <p className="text-gray-700 mb-8">
           {job.company}
         </p>
-
 
         <form
           onSubmit={handleSubmit}
           className="space-y-5"
         >
-
 
           <input
             type="text"
@@ -106,9 +94,8 @@ export default function ApplyPage({ params }) {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full border p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 rounded-lg text-gray-900 placeholder:text-gray-500"
           />
-
 
           <input
             type="email"
@@ -117,9 +104,8 @@ export default function ApplyPage({ params }) {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full border p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 rounded-lg text-gray-900 placeholder:text-gray-500"
           />
-
 
           <input
             type="tel"
@@ -128,9 +114,8 @@ export default function ApplyPage({ params }) {
             value={form.phone}
             onChange={handleChange}
             required
-            className="w-full border p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 rounded-lg text-gray-900 placeholder:text-gray-500"
           />
-
 
           <input
             type="url"
@@ -139,9 +124,8 @@ export default function ApplyPage({ params }) {
             value={form.resume}
             onChange={handleChange}
             required
-            className="w-full border p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 rounded-lg text-gray-900 placeholder:text-gray-500"
           />
-
 
           <textarea
             name="coverLetter"
@@ -149,9 +133,8 @@ export default function ApplyPage({ params }) {
             rows="5"
             value={form.coverLetter}
             onChange={handleChange}
-            className="w-full border p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 rounded-lg text-gray-900 placeholder:text-gray-500"
           />
-
 
           <button
             type="submit"
@@ -159,7 +142,6 @@ export default function ApplyPage({ params }) {
           >
             Submit Application
           </button>
-
 
         </form>
 
