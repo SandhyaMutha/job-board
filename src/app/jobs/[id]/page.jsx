@@ -8,7 +8,7 @@ export default async function JobDetails({ params }) {
 
   if (!job) {
     return (
-      <h1 className="text-center text-3xl mt-10">
+      <h1 className="text-center text-3xl text-gray-900 mt-10">
         Job Not Found
       </h1>
     );
@@ -19,22 +19,22 @@ export default async function JobDetails({ params }) {
 
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
 
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-4xl font-bold text-gray-900">
           {job.title}
         </h1>
 
-        <p className="text-xl mt-2 text-gray-600">
+        <p className="text-xl mt-2 text-gray-700">
           {job.company}
         </p>
 
         <div className="mt-6 space-y-3">
 
-          <p>
-            <strong>📍 Location:</strong> {job.location}
+          <p className="text-gray-700">
+            <strong className="text-gray-900">📍 Location:</strong> {job.location}
           </p>
 
-          <p>
-            <strong>💼 Job Type:</strong> {job.type}
+          <p className="text-gray-700">
+            <strong className="text-gray-900">💼 Job Type:</strong> {job.type}
           </p>
 
           <p className="text-green-600 font-bold">
@@ -43,15 +43,15 @@ export default async function JobDetails({ params }) {
 
         </div>
 
-        <h2 className="text-2xl font-bold mt-10">
+        <h2 className="text-2xl font-bold text-gray-900 mt-10">
           Job Description
         </h2>
 
-        <p className="mt-3 text-gray-700">
+        <p className="mt-3 text-gray-700 leading-7">
           {job.description}
         </p>
 
-        <h2 className="text-2xl font-bold mt-8">
+        <h2 className="text-2xl font-bold text-gray-900 mt-8">
           Skills Required
         </h2>
 
@@ -69,10 +69,11 @@ export default async function JobDetails({ params }) {
         <div className="mt-10 flex gap-4">
 
           <Link href={`/apply/${job.id}`}>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">
-            Apply Now
-          </button>
-         </Link>
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">
+              Apply Now
+            </button>
+          </Link>
+
           <Link href="/">
             <button className="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700">
               Back
