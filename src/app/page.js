@@ -87,13 +87,13 @@ export default function Home() {
               placeholder="Search jobs..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="border p-3 rounded-lg bg-white shadow"
+              className="border border-gray-300 p-3 rounded-lg bg-white shadow text-gray-900 placeholder:text-gray-500"
             />
 
             <select
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="border p-3 rounded-lg bg-white shadow"
+              className="border border-gray-300 p-3 rounded-lg bg-white text-gray-900 shadow"
             >
               <option>All</option>
               <option>Hyderabad</option>
@@ -106,7 +106,7 @@ export default function Home() {
             <select
               value={jobType}
               onChange={(e) => setJobType(e.target.value)}
-              className="border p-3 rounded-lg bg-white shadow"
+              className="border border-gray-300 p-3 rounded-lg bg-white text-gray-900 shadow"
             >
               <option>All</option>
               <option>Full Time</option>
@@ -118,10 +118,13 @@ export default function Home() {
 
         </section>
 
-        {/* FEATURED JOBS (COMPANIES SECTION) */}
-        <section id="companies" className="max-w-6xl mx-auto px-6 mb-12">
+        {/* FEATURED JOBS */}
+        <section
+          id="companies"
+          className="max-w-6xl mx-auto px-6 mb-12"
+        >
 
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
             ⭐ Featured Jobs
           </h2>
 
@@ -133,12 +136,22 @@ export default function Home() {
                 href={`/jobs/${job.id}`}
                 className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600 hover:shadow-xl transition block"
               >
-                <h3 className="text-xl font-bold">{job.title}</h3>
-                <p className="text-gray-600 mt-2">{job.company}</p>
-                <p className="mt-2">📍 {job.location}</p>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {job.title}
+                </h3>
+
+                <p className="text-gray-700 mt-2">
+                  {job.company}
+                </p>
+
+                <p className="text-gray-700 mt-2">
+                  📍 {job.location}
+                </p>
+
                 <p className="text-green-600 font-semibold mt-2">
                   💰 {job.salary}
                 </p>
+
               </Link>
             ))}
 
@@ -146,18 +159,29 @@ export default function Home() {
 
         </section>
 
-        {/* ABOUT SECTION */}
-        <section id="about" className="max-w-6xl mx-auto px-6 my-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="text-gray-600">
+        {/* ABOUT */}
+        <section
+          id="about"
+          className="max-w-6xl mx-auto px-6 my-16 text-center"
+        >
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            About Us
+          </h2>
+
+          <p className="text-gray-700">
             JobBoard helps candidates find dream jobs and connect with top companies easily using a simple and modern interface.
           </p>
+
         </section>
 
         {/* LATEST JOBS */}
-        <section id="latest-jobs" className="max-w-6xl mx-auto px-6 pb-12">
+        <section
+          id="latest-jobs"
+          className="max-w-6xl mx-auto px-6 pb-12"
+        >
 
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Latest Jobs
           </h2>
 
@@ -177,12 +201,20 @@ export default function Home() {
 
         </section>
 
-        {/* CONTACT SECTION */}
-        <section id="contact" className="max-w-6xl mx-auto px-6 my-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">Contact</h2>
-          <p className="text-gray-600">
+        {/* CONTACT */}
+        <section
+          id="contact"
+          className="max-w-6xl mx-auto px-6 my-16 text-center"
+        >
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Contact
+          </h2>
+
+          <p className="text-gray-700">
             Email: support@jobboard.com | Phone: +91 98765 43210
           </p>
+
         </section>
 
       </main>

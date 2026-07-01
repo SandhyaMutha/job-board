@@ -7,11 +7,11 @@ export default function JobCard({ job }) {
       <div className="flex justify-between items-start">
 
         <div>
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-bold text-gray-900">
             {job.title}
           </h2>
 
-          <p className="text-gray-600 mt-1">
+          <p className="text-gray-700 mt-1">
             {job.company}
           </p>
         </div>
@@ -24,7 +24,9 @@ export default function JobCard({ job }) {
 
       <div className="mt-5 space-y-2">
 
-        <p>📍 {job.location}</p>
+        <p className="text-gray-700">
+          📍 {job.location}
+        </p>
 
         <p className="text-green-600 font-semibold">
           💰 {job.salary}
